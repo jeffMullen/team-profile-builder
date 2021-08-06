@@ -1,20 +1,13 @@
-const sayHello = require('../utils/employee');
-
-const mockConsole = jest.spyOn(console, 'log');
-const mockConImp = mockConsole.mockImplementation(() => { });
+const Employee = require('../lib/employee');
 
 describe('Employee', () => {
-    describe('sayHello', () => {
-        it('should return the statement: say hello', () => {
-            mockConsole;
-            mockConImp;
-            mock.mockRestore();
-            const string = 'Hello World!';
+    describe('getName', () => {
+        it('should return employee name', () => {
+            const name = 'Jeff';
 
-            const result = sayHello(string);
+            const newEmployee = new Employee(name, '1', 'whatever');
 
-
-            expect(result).toEqual(string);
+            expect(newEmployee.getName()).toEqual(name);
 
         })
     })

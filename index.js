@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Manager = require('./lib/manager');
 const pageTemplate = require('./src/page-template.js');
 
 // || Eventual array to send to page-template
@@ -91,8 +92,9 @@ function init() {
     inquirer
         .prompt(managerPrompt)
         .then(response => {
-            responseArray.push(response);
-            console.log(responseArray);
+            const manager = new Manager(response.manager, response.id, response.email, response.office)
+            console.log(manager);
+            responseArray.push(manager);
             addTeamMember();
         })
 
