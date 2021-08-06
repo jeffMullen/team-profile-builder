@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require('./lib/manager');
-const pageTemplate = require('./src/page-template.js');
+const createCard = require('./src/page-template.js');
 
 // || Eventual array to send to page-template
 const responseArray = [];
@@ -125,7 +125,7 @@ function employeeDetails(prompt) {
 }
 
 function sendForGeneration(response) {
-    console.log(response);
+    createCard(response);
 }
 
 init();
