@@ -9,8 +9,23 @@ const responseArray = [];
 const managerPrompt = [
     {
         type: 'input',
-        message: 'Write something',
+        message: 'Team Manager Name',
         name: 'manager'
+    },
+    {
+        type: 'input',
+        message: 'Employee ID',
+        name: 'id'
+    },
+    {
+        type: 'input',
+        message: 'Manager Email',
+        name: 'email'
+    },
+    {
+        type: 'input',
+        message: 'Office Number',
+        name: 'office'
     }
 ];
 
