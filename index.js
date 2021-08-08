@@ -139,8 +139,8 @@ function internDetails(prompt) {
 }
 
 function sendForGeneration(responseArr) {
-    functions.sortEmployees(responseArr);
-    fs.writeFile('./dist/team.html', functions.generateHtml(),
+    // functions.sortEmployees(responseArr);
+    fs.writeFile('./dist/team.html', functions.sortEmployees(responseArr),
         err => err ? console.log(err) : console.log('Success!'));
 }
 
