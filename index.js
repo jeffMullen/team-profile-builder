@@ -3,7 +3,8 @@ const fs = require('fs');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
-const createCard = require('./src/page-template.js');
+const functions = require('./src/page-template');
+const generateHtml = require('./src/page-template');
 
 // || Eventual array to send to page-template
 const responseArray = [];
@@ -106,7 +107,7 @@ function addTeamMember() {
     inquirer
         .prompt(teamQuery)
         .then(answer => {
-            // if engineer or intern then call employeeDetails, otherwise end
+            // if engineer or intern then call their function, otherwise end inquirer
             if (answer.addTeam === 'Engineer') {
                 engineerDetails(engineerPrompt)
             } else if (answer.addTeam === 'Intern') {
@@ -137,8 +138,10 @@ function internDetails(prompt) {
         })
 }
 
-function sendForGeneration(response) {
-    createCard(response);
+function sendForGeneration(responseArr) {
+    functions.sortEmployees(responseArr);
+    fs.writeFile('./dist/team.html', functions.generateHtml(),
+        err => err ? console.log(err) : console.log('Success!'));
 }
 
 init();
