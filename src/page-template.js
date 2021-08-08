@@ -1,11 +1,24 @@
-
+const manager = [];
+const engineersArr = [];
+const internsArr = [];
 
 function createCard(array) {
-    console.log(array);
     for (let i = 0; i < array.length; i++) {
-        let newEmployee = Array[i].getRole();
+        let newEmployee = array[i].getRole();
         console.log(newEmployee);
+
+        if (newEmployee === 'Manager') {
+            manager.push(array[i]);
+        } else if (newEmployee === 'Engineer') {
+            engineersArr.push(array[i]);
+        } else {
+            internsArr.push(array[i]);
+        }
     }
+
+    console.log(manager);
+    console.log(engineersArr);
+    console.log(internsArr);
 
 }
 
