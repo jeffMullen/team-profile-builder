@@ -1,6 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
 const createCard = require('./src/page-template.js');
 
 // || Eventual array to send to page-template
@@ -106,20 +108,31 @@ function addTeamMember() {
         .then(answer => {
             // if engineer or intern then call employeeDetails, otherwise end
             if (answer.addTeam === 'Engineer') {
-                employeeDetails(engineerPrompt)
+                engineerDetails(engineerPrompt)
             } else if (answer.addTeam === 'Intern') {
-                employeeDetails(internPrompt)
+                internDetails(internPrompt)
             } else {
                 sendForGeneration(responseArray);
             }
         })
 }
 
-function employeeDetails(prompt) {
+function engineerDetails(prompt) {
     inquirer
         .prompt(prompt)
         .then(response => {
-            responseArray.push(response);
+            const engineer = new Engineer(response.engineer, response.id, response.email, response.github);
+            responseArray.push(engineer);
+            addTeamMember();
+        })
+}
+
+function internDetails(prompt) {
+    inquirer
+        .prompt(prompt)
+        .then(response => {
+            const intern = new Intern(response.intern, response.id, response.email, response.school);
+            responseArray.push(intern);
             addTeamMember();
         })
 }

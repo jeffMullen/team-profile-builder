@@ -2,9 +2,10 @@
 
 function createCard(array) {
     console.log(array);
-    // for (let i = 0; i < array.length; i++) {
-    //     const newEmployee = Array[i].getRole();
-    // }
+    for (let i = 0; i < array.length; i++) {
+        let newEmployee = Array[i].getRole();
+        console.log(newEmployee);
+    }
 
 }
 
