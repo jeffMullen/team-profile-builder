@@ -1,4 +1,4 @@
-const manager = [];
+const managerArr = [];
 const engineersArr = [];
 const internsArr = [];
 
@@ -8,48 +8,46 @@ function sortEmployees(array) {
         let newEmployee = array[i].getRole();
 
         if (newEmployee === 'Manager') {
-            manager.push(JSON.stringify(array[i]));
-            console.log(`Manager ${manager}`);
+            console.log(managerArr);
+            managerArr.push(array[i]);
+            console.log(managerArr);
         } else if (newEmployee === 'Engineer') {
             engineersArr.push(array[i]);
+            console.log(engineersArr);
         } else {
             internsArr.push(array[i]);
         }
     }
-    // managerCard(manager);
-    // engineerCard(engineersArr);
-    // internCard(internsArr);
 
-    return generateHtml(manager, engineersArr, internsArr);
+    return generateHtml(managerArr, engineersArr, internsArr);
 
 }
 
 function managerCard(manager) {
-    const parsedManager = JSON.parse(manager);
-    console.log(`managerCard ${parsedManager}`);
+    console.log(manager);
     return `
     <div class="card">
-        <h2>${parsedManager.name}</h2>
-        <h3>Manager</h3>
+        <h2>${manager[0].name}</h2>
+        <h3>${manager[0].getRole()}</h3>
         <ul class="list-group">
-            <li class="list-group-item">ID: ${parsedManager.id}</li>
-            <li class="list-group-item">Email: ${parsedManager.email}</li>
-            <li class="list-group-item">Office Number: ${parsedManager.officeNumber}</li>
+            <li class="list-group-item">ID: ${manager[0].id}</li>
+            <li class="list-group-item">Email: ${manager[0].email}</li>
+            <li class="list-group-item">Office Number: ${manager[0].officeNumber}</li>
         </ul>
     </div>
     `
 }
 
-function engineerCard(engineersArr) {
-
+function engineerCard(engineer) {
+    console.log(engineer);
 };
 
 function internCard(internsArr) {
 
 }
 
-function generateHtml(manager, engineersArr, internsArr) {
-    console.log(`generateHTML ${manager}`);
+function generateHtml(manager, engineer, intern) {
+    console.log(manager);
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -65,6 +63,8 @@ function generateHtml(manager, engineersArr, internsArr) {
         </header>
 
         ${managerCard(manager)}
+        ${engineerCard(engineer)}
+
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
