@@ -26,14 +26,18 @@ function sortEmployees(array) {
 function managerCard(manager) {
     console.log(manager);
     return `
-    <div class="card p-3 m-3 col-3">
-        <h2>${manager[0].name}</h2>
-        <h3>${manager[0].getRole()}</h3>
+    <div class="card m-3 col-3">
+        <div class="p-3">
+            <h2>${manager[0].name}</h2>
+            <h3>${manager[0].getRole()}</h3>
+        </div>
+        <div>
         <ul class="list-group">
             <li class="list-group-item">ID: ${manager[0].id}</li>
             <li class="list-group-item">Email: <a href="mailto:${manager[0].email}">${manager[0].email}</a></li>
             <li class="list-group-item">Office Number: ${manager[0].officeNumber}</li>
         </ul>
+        </div>
     </div>
     `
 }
@@ -44,9 +48,11 @@ function engineerCard(engineer) {
     // || Loop through array of engineers and concatenate strings together each time
     for (let i = 0; i < engineer.length; i++) {
         engineerCardStr = engineerCardStr + `
-    <div class="card p-3 m-3 col-3">
-        <h2>${engineer[i].name}</h2>
-        <h3>${engineer[i].getRole()}</h3>
+    <div class="card m-3 col-3">
+        <div class="p-3">
+            <h2>${engineer[i].name}</h2>
+            <h3>${engineer[i].getRole()}</h3>
+        </div>
         <ul class="list-group">
             <li class="list-group-item">ID: ${engineer[i].id}</li >
             <li class="list-group-item">Email: <a href="mailto:${engineer[i].email}">${engineer[i].email}</a></li>
@@ -65,9 +71,11 @@ function internCard(intern) {
     // || Loop through array of engineers and concatenate strings together each time
     for (let i = 0; i < intern.length; i++) {
         internCardStr = internCardStr + `
-    <div class="card p-3 m-3 col-3">
-        <h2>${intern[i].name}</h2>
-        <h3>${intern[i].getRole()}</h3>
+    <div class="card m-3 col-3">
+        <div class="p-3">
+            <h2>${intern[i].name}</h2>
+            <h3>${intern[i].getRole()}</h3>
+        </div>
         <ul class="list-group">
             <li class="list-group-item">ID: ${intern[i].id}</li >
             <li class="list-group-item">Email: <a href="mailto:${intern[i].email}">${intern[i].email}</a></li>
@@ -88,6 +96,7 @@ function generateHtml(manager, engineer, intern) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
         <title>Team Profile</title>
         </head>
         <body>
