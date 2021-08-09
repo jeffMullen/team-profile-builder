@@ -59,13 +59,29 @@ function engineerCard(engineer) {
 
 };
 
-function internCard(internsArr) {
+function internCard(intern) {
+    let internCardStr = '';
 
+    // || Loop through array of engineers and concatenate strings together each time
+    for (let i = 0; i < intern.length; i++) {
+        internCardStr = internCardStr + `
+    <div class="card">
+        <h2>${intern[i].name}</h2>
+        <h3>${intern[i].getRole()}</h3>
+        <ul class="list-group">
+            <li class="list-group-item">ID: ${intern[i].id}</li >
+            <li class="list-group-item">Email: ${intern[i].email}</li>
+            <li class="list-group-item">Office Number: ${intern[i].school}</li>
+        </ul >
+    </div >
+        `
+    }
+    return internCardStr;
 }
 
 function generateHtml(manager, engineer, intern) {
     console.log(manager);
-    return `< !DOCTYPE html >
+    return `<!DOCTYPE html>
         <html lang="en">
             <head>
                 <meta charset="UTF-8">
@@ -81,6 +97,7 @@ function generateHtml(manager, engineer, intern) {
 
                                 ${managerCard(manager)}
                                 ${engineerCard(engineer)}
+                                ${internCard(intern)}
 
 
                                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
