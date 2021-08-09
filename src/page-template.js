@@ -31,7 +31,7 @@ function managerCard(manager) {
         <h3>${manager[0].getRole()}</h3>
         <ul class="list-group">
             <li class="list-group-item">ID: ${manager[0].id}</li>
-            <li class="list-group-item">Email: ${manager[0].email}</li>
+            <li class="list-group-item">Email: <a href="mailto:${manager[0].email}">${manager[0].email}</a></li>
             <li class="list-group-item">Office Number: ${manager[0].officeNumber}</li>
         </ul>
     </div>
@@ -49,8 +49,8 @@ function engineerCard(engineer) {
         <h3>${engineer[i].getRole()}</h3>
         <ul class="list-group">
             <li class="list-group-item">ID: ${engineer[i].id}</li >
-            <li class="list-group-item">Email: ${engineer[i].email}</li>
-            <li class="list-group-item">Office Number: ${engineer[i].github}</li>
+            <li class="list-group-item">Email: <a href="mailto:${engineer[i].email}">${engineer[i].email}</a></li>
+            <li class="list-group-item">GitHub: ${engineer[i].github}</li>
         </ul >
     </div >
         `
@@ -70,8 +70,8 @@ function internCard(intern) {
         <h3>${intern[i].getRole()}</h3>
         <ul class="list-group">
             <li class="list-group-item">ID: ${intern[i].id}</li >
-            <li class="list-group-item">Email: ${intern[i].email}</li>
-            <li class="list-group-item">Office Number: ${intern[i].school}</li>
+            <li class="list-group-item">Email: <a href="mailto:${intern[i].email}">${intern[i].email}</a></li>
+            <li class="list-group-item">School: ${intern[i].school}</li>
         </ul >
     </div >
         `
