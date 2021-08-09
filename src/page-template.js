@@ -26,7 +26,7 @@ function sortEmployees(array) {
 function managerCard(manager) {
     console.log(manager);
     return `
-    <div class="card p-3 m-3">
+    <div class="card p-3 m-3 col-3">
         <h2>${manager[0].name}</h2>
         <h3>${manager[0].getRole()}</h3>
         <ul class="list-group">
@@ -44,7 +44,7 @@ function engineerCard(engineer) {
     // || Loop through array of engineers and concatenate strings together each time
     for (let i = 0; i < engineer.length; i++) {
         engineerCardStr = engineerCardStr + `
-    <div class="card p-3 m-3">
+    <div class="card p-3 m-3 col-3">
         <h2>${engineer[i].name}</h2>
         <h3>${engineer[i].getRole()}</h3>
         <ul class="list-group">
@@ -65,7 +65,7 @@ function internCard(intern) {
     // || Loop through array of engineers and concatenate strings together each time
     for (let i = 0; i < intern.length; i++) {
         internCardStr = internCardStr + `
-    <div class="card p-3 m-3">
+    <div class="card p-3 m-3 col-3">
         <h2>${intern[i].name}</h2>
         <h3>${intern[i].getRole()}</h3>
         <ul class="list-group">
@@ -92,10 +92,10 @@ function generateHtml(manager, engineer, intern) {
         </head>
         <body>
             <header>
-                <h1>My Team</h1>
+                <h1 class="text-center py-5">My Team</h1>
             </header>
             <main class="container">
-                <div class="row">
+                <div class="row d-flex justify-content-around">
 
                     ${managerCard(manager)}
                     ${engineerCard(engineer)}
