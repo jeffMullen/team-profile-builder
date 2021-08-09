@@ -103,7 +103,7 @@ function generateHtml(manager, engineer, intern) {
             <header>
                 <h1 class="text-center py-5">My Team</h1>
             </header>
-            <main class="container">
+            <main class="container my-5">
                 <div class="row d-flex justify-content-around">
 
                     ${managerCard(manager)}
