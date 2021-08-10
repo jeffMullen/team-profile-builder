@@ -31,7 +31,7 @@ const managerPrompt = [
 
             const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
-            return (valid ? true : console.log("  Please enter a valid email"));
+            return (valid ? true : console.log('  Please enter a valid email'));
         }
     },
     {
@@ -39,7 +39,7 @@ const managerPrompt = [
         message: 'Office Number:',
         name: 'office',
         validate: officeNumber => {
-            return (Number.parseFloat(officeNumber) ? true : console.log(' : Please enter an office number'));
+            return (parseInt(officeNumber) ? true : console.log('  Please enter an office number'));
         }
     }
 ];
@@ -78,7 +78,7 @@ const engineerPrompt = [
 
             const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
-            return (valid ? true : console.log("  Please enter a valid email"));
+            return (valid ? true : console.log('  Please enter a valid email'));
         }
     },
     {
@@ -113,7 +113,7 @@ const internPrompt = [
 
             const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
-            return (valid ? true : console.log("  Please enter a valid email"));
+            return (valid ? true : console.log('  Please enter a valid email'));
         }
     },
     {
@@ -175,7 +175,7 @@ function internDetails(prompt) {
 
 function sendForGeneration(responseArr) {
     fs.writeFile('./dist/team.html', functions.sortEmployees(responseArr),
-        err => err ? console.log(err) : console.log('Success!'));
+        err => err ? console.log(err) : console.log('Your HTML file has been created!'));
 }
 
 init();
