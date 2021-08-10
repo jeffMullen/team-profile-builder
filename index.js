@@ -81,7 +81,10 @@ const engineerPrompt = [
     {
         type: 'input',
         message: 'GitHub Username:',
-        name: 'github'
+        name: 'github',
+        validate: github => {
+            return (github ? true : console.log('Please enter a GitHub username'));
+        }
     }
 ];
 
@@ -113,7 +116,10 @@ const internPrompt = [
     {
         type: 'input',
         message: 'School:',
-        name: 'school'
+        name: 'school',
+        validate: school => {
+            return (school ? true : console.log('Please enter a school'));
+        }
     }
 ];
 
