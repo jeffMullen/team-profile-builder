@@ -41,7 +41,7 @@ This project is covered under the MIT License.
   This application is used to quickly generate organized information about your employees.  Can be used on your website.
 
   ## Sample HTML
-  - Link to sample [HTML](./sample/sample.html)
+  - Link to sample [HTML](./sample-html/sample.html)
 
   ## Video Demonstration
   - Link to video [demonstration](https://drive.google.com/file/d/1WSDoDDO9amxrrG1w1Z0iYHQwGL8o3Vp5/view?usp=sharing)
