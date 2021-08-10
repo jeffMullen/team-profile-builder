@@ -1,0 +1,22 @@
+header {
+    background-color: #9d0208;
+    color: white;
+}
+
+.card {
+    padding: 0px;
+    box-shadow: 5px 5px 3px lightgray;
+}
+
+.card div:first-child {
+    background: #b2dbbf;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+.card div:last-child {
+    background: #F1F8F3;
+    padding: 15px;
+}
