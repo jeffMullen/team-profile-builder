@@ -4,7 +4,6 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const functions = require('./src/page-template');
-const generateHtml = require('./src/page-template');
 
 // || Eventual array to send to page-template
 const responseArray = [];
@@ -24,7 +23,18 @@ const managerPrompt = [
     {
         type: 'input',
         message: 'Manager Email:',
-        name: 'email'
+        name: 'email',
+        validate: email => {
+
+            const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+
+            if (valid) {
+                return true;
+            } else {
+                console.log(".  Please enter a valid email")
+                return false;
+            }
+        }
     },
     {
         type: 'input',
@@ -59,7 +69,18 @@ const engineerPrompt = [
     {
         type: 'input',
         message: 'Employee Email:',
-        name: 'email'
+        name: 'email',
+        validate: email => {
+
+            const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+
+            if (valid) {
+                return true;
+            } else {
+                console.log(".  Please enter a valid email")
+                return false;
+            }
+        }
     },
     {
         type: 'input',
@@ -82,7 +103,18 @@ const internPrompt = [
     {
         type: 'input',
         message: 'Intern Email:',
-        name: 'email'
+        name: 'email',
+        validate: email => {
+
+            const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+
+            if (valid) {
+                return true;
+            } else {
+                console.log(".  Please enter a valid email")
+                return false;
+            }
+        }
     },
     {
         type: 'input',
@@ -139,7 +171,6 @@ function internDetails(prompt) {
 }
 
 function sendForGeneration(responseArr) {
-    // functions.sortEmployees(responseArr);
     fs.writeFile('./dist/team.html', functions.sortEmployees(responseArr),
         err => err ? console.log(err) : console.log('Success!'));
 }
