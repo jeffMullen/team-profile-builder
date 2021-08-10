@@ -13,7 +13,10 @@ const managerPrompt = [
     {
         type: 'input',
         message: 'Team Manager Name:',
-        name: 'manager'
+        name: 'manager',
+        validate: input => {
+            return (input ? true : console.log('Please enter a name'));
+        }
     },
     {
         type: 'input',
@@ -26,14 +29,9 @@ const managerPrompt = [
         name: 'email',
         validate: email => {
 
-            const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+            const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
-            if (valid) {
-                return true;
-            } else {
-                console.log(".  Please enter a valid email")
-                return false;
-            }
+            return (valid ? true : console.log("  Please enter a valid email"));
         }
     },
     {
@@ -59,7 +57,10 @@ const engineerPrompt = [
     {
         type: 'input',
         message: 'Engineer Name:',
-        name: 'engineer'
+        name: 'engineer',
+        validate: input => {
+            return (input ? true : console.log('Please enter a name'));
+        }
     },
     {
         type: 'input',
@@ -72,14 +73,9 @@ const engineerPrompt = [
         name: 'email',
         validate: email => {
 
-            const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+            const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
-            if (valid) {
-                return true;
-            } else {
-                console.log(".  Please enter a valid email")
-                return false;
-            }
+            return (valid ? true : console.log("  Please enter a valid email"));
         }
     },
     {
@@ -93,7 +89,10 @@ const internPrompt = [
     {
         type: 'input',
         message: 'Intern Name:',
-        name: 'intern'
+        name: 'intern',
+        validate: input => {
+            return (input ? true : console.log('Please enter a name'));
+        }
     },
     {
         type: 'input',
@@ -106,14 +105,9 @@ const internPrompt = [
         name: 'email',
         validate: email => {
 
-            const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+            const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
-            if (valid) {
-                return true;
-            } else {
-                console.log(".  Please enter a valid email")
-                return false;
-            }
+            return (valid ? true : console.log("  Please enter a valid email"));
         }
     },
     {
