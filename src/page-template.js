@@ -3,17 +3,13 @@ const engineersArr = [];
 const internsArr = [];
 
 function sortEmployees(array) {
-    console.log('HIT SORT EMPLOYEES');
     for (let i = 0; i < array.length; i++) {
         let newEmployee = array[i].getRole();
 
         if (newEmployee === 'Manager') {
-            console.log(managerArr);
             managerArr.push(array[i]);
-            console.log(managerArr);
         } else if (newEmployee === 'Engineer') {
             engineersArr.push(array[i]);
-            console.log(engineersArr);
         } else {
             internsArr.push(array[i]);
         }
@@ -24,7 +20,6 @@ function sortEmployees(array) {
 }
 
 function managerCard(manager) {
-    console.log(manager);
     return `
     <div class="card m-3 col-3">
         <div class="p-3">
@@ -92,7 +87,6 @@ function internCard(intern) {
 }
 
 function generateHtml(manager, engineer, intern) {
-    console.log(manager);
     return `<!DOCTYPE html>
         <html lang="en">
         <head>

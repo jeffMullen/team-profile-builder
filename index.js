@@ -22,6 +22,9 @@ const managerPrompt = [
         type: 'input',
         message: 'Employee ID:',
         name: 'id',
+        validate: input => {
+            return (input ? true : console.log('Please enter an ID'));
+        }
     },
     {
         type: 'input',
@@ -68,7 +71,10 @@ const engineerPrompt = [
     {
         type: 'input',
         message: 'Employee ID:',
-        name: 'id'
+        name: 'id',
+        validate: input => {
+            return (input ? true : console.log('Please enter an ID'));
+        }
     },
     {
         type: 'input',
@@ -103,7 +109,10 @@ const internPrompt = [
     {
         type: 'input',
         message: 'Intern ID:',
-        name: 'id'
+        name: 'id',
+        validate: input => {
+            return (input ? true : console.log('Please enter an ID'));
+        }
     },
     {
         type: 'input',
@@ -131,7 +140,6 @@ function init() {
         .prompt(managerPrompt)
         .then(response => {
             const manager = new Manager(response.manager, response.id, response.email, response.office)
-            console.log(manager);
             responseArray.push(manager);
             addTeamMember();
         })
