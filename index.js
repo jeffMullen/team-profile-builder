@@ -21,7 +21,7 @@ const managerPrompt = [
     {
         type: 'input',
         message: 'Employee ID:',
-        name: 'id'
+        name: 'id',
     },
     {
         type: 'input',
@@ -37,7 +37,10 @@ const managerPrompt = [
     {
         type: 'input',
         message: 'Office Number:',
-        name: 'office'
+        name: 'office',
+        validate: officeNumber => {
+            return (Number.parseFloat(officeNumber) ? true : console.log(' : Please enter an office number'));
+        }
     }
 ];
 
