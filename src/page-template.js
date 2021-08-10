@@ -32,11 +32,11 @@ function managerCard(manager) {
             <h3><i class="fas fa-tasks"></i>  ${manager[0].getRole()}</h3>
         </div>
         <div>
-        <ul class="list-group">
-            <li class="list-group-item">ID: ${manager[0].id}</li>
-            <li class="list-group-item">Email: <a href="mailto:${manager[0].email}">${manager[0].email}</a></li>
-            <li class="list-group-item">Office Number: ${manager[0].officeNumber}</li>
-        </ul>
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${manager[0].id}</li>
+                <li class="list-group-item">Email: <a href="mailto:${manager[0].email}">${manager[0].email}</a></li>
+                <li class="list-group-item">Office Number: ${manager[0].officeNumber}</li>
+            </ul>
         </div>
     </div>
     `
@@ -53,11 +53,13 @@ function engineerCard(engineer) {
             <h2>${engineer[i].name}</h2>
             <h3><i class="fas fa-terminal"></i> ${engineer[i].getRole()}</h3>
         </div>
-        <ul class="list-group">
-            <li class="list-group-item">ID: ${engineer[i].id}</li >
-            <li class="list-group-item">Email: <a href="mailto:${engineer[i].email}">${engineer[i].email}</a></li>
-            <li class="list-group-item">GitHub: <a href="https://github.com/${engineer[i].github}" target="_blank">${engineer[i].github}</a></li>
-        </ul >
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${engineer[i].id}</li >
+                <li class="list-group-item">Email: <a href="mailto:${engineer[i].email}">${engineer[i].email}</a></li>
+                <li class="list-group-item">GitHub: <a href="https://github.com/${engineer[i].github}" target="_blank">${engineer[i].github}</a></li>
+            </ul >
+        </div>
     </div >
         `
     }
@@ -76,11 +78,13 @@ function internCard(intern) {
             <h2>${intern[i].name}</h2>
             <h3><i class="fas fa-university"></i> ${intern[i].getRole()}</h3>
         </div>
-        <ul class="list-group">
-            <li class="list-group-item">ID: ${intern[i].id}</li >
-            <li class="list-group-item">Email: <a href="mailto:${intern[i].email}">${intern[i].email}</a></li>
-            <li class="list-group-item">School: ${intern[i].school}</li>
-        </ul >
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${intern[i].id}</li >
+                <li class="list-group-item">Email: <a href="mailto:${intern[i].email}">${intern[i].email}</a></li>
+                <li class="list-group-item">School: ${intern[i].school}</li>
+            </ul>
+        </div>
     </div >
         `
     }
