@@ -29,7 +29,7 @@ function managerCard(manager) {
     <div class="card m-3 col-3">
         <div class="p-3">
             <h2>${manager[0].name}</h2>
-            <h3>${manager[0].getRole()}</h3>
+            <h3><i class="fas fa-tasks"></i>  ${manager[0].getRole()}</h3>
         </div>
         <div>
         <ul class="list-group">
@@ -51,7 +51,7 @@ function engineerCard(engineer) {
     <div class="card m-3 col-3">
         <div class="p-3">
             <h2>${engineer[i].name}</h2>
-            <h3>${engineer[i].getRole()}</h3>
+            <h3><i class="fas fa-terminal"></i> ${engineer[i].getRole()}</h3>
         </div>
         <ul class="list-group">
             <li class="list-group-item">ID: ${engineer[i].id}</li >
@@ -74,7 +74,7 @@ function internCard(intern) {
     <div class="card m-3 col-3">
         <div class="p-3">
             <h2>${intern[i].name}</h2>
-            <h3>${intern[i].getRole()}</h3>
+            <h3><i class="fas fa-university"></i> ${intern[i].getRole()}</h3>
         </div>
         <ul class="list-group">
             <li class="list-group-item">ID: ${intern[i].id}</li >
@@ -95,6 +95,7 @@ function generateHtml(manager, engineer, intern) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/e79245cba1.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <link rel="stylesheet" href="./style.css">
         <title>Team Profile</title>

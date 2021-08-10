@@ -1,5 +1,6 @@
 header {
-    background-color: #f3ffbd;
+    background-color: #9d0208;
+    color: white;
 }
 
 .card {
@@ -8,4 +9,8 @@ header {
 
 .card div {
     background: #b2dbbf;
+}
+
+h3 {
+    font-size: 22px;
 }
